@@ -1,0 +1,206 @@
+.Home {
+    height: 100vh;
+    position: relative;
+    z-index: 9;
+    font-size: 18px;
+}
+
+p {
+    cursor: pointer;
+}
+
+.todoContainer {
+    position: relative;
+    top: 60px;
+    margin: 0 auto;
+    max-width: 500px;
+    transition: all .5s ease;
+}
+
+.todoHeader {
+    animation: fadeInDown .8s;
+}
+
+.todoBody {
+    transition: all .5s ease-in-out;
+    animation: fadeInUp .8s;
+}
+
+.todoHeading h4 {
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+#dark .cancel svg {
+    fill: #b1b4d6;
+}
+
+#light .cancel {
+    color: black;
+}
+
+#dark .todoBody {
+    background-color: hsl(237, 14%, 26%);
+    border-radius: 5px;
+    color: white;
+    padding: 1px;
+}
+
+#light .todoBody {
+    background-color: hsl(0, 0%, 98%);
+    color: black;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.toggleSpan {
+    display: none;
+    height: 30px;
+    animation: fadeIn 1s;
+    cursor: pointer;
+}
+
+.addBtn {
+    background-image: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border: none;
+    border-radius: 0px 5px  5px 0px;
+    font-size: 23px;
+    width: 35px;
+}
+
+#light .addBtn {
+    color: white;
+}
+
+#dark .addBtn {
+    color: black;
+}
+
+.addBtn:hover {
+    background-image: linear-gradient( hsl(192, 100%, 70%), hsl(280, 87%, 75%));
+}
+
+.toggleIcon img {
+    height: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.hide { 
+    display: none;
+}
+
+.active {
+    color: hsl(220, 98%, 61%);
+}
+
+#dark .addList input {
+    color: white;
+}
+
+#light .addList input {
+    color: black;
+}
+
+.addList input {
+    background: transparent;
+    width: 100%;
+    outline: none;
+    border: 0;
+}
+
+.Listitem {
+    list-style: none;
+}
+
+#dark .Listitem {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.223);
+}
+
+#light .Listitem {
+    border-bottom: 1px solid rgba(26, 24, 24, 0.223);
+}
+
+.checkList {
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.complete {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.pending {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.checkList { 
+    position: relative;
+    background: transparent;
+    margin-right: 20px;
+}
+
+#dark .checkList::before {
+    background-color:hsl(237, 14%, 26%);
+}
+
+#light .checkList::before {
+    background-color: hsl(0, 0%, 98%);
+    border: 1px solid rgba(49, 46, 46, 0.568);
+}
+
+.checkList::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 27px;
+    border: 1px solid rgba(255, 255, 255, 0.568);
+    border-radius: 50%;
+    top: -5px;
+    transform: translate(-20%);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.checkList:hover {
+    border: 1px solid purple;
+}
+
+.checkList:checked::before {
+    background-image: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    position: absolute;
+    content: '\2713';
+    color: white;
+    line-height: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+@media (max-width: 575px) {
+    .toBottom {
+        max-height: 40px;
+    }
+
+    .todoContainer {
+        max-width: 365px;
+    }
+
+    .filterList {
+        margin-top: 5px;
+        margin-left: -17px;
+        min-width: 365px;
+    }
+
+    .todoContainer {
+        top: 54px;
+    }
+
+    .itemsleft, .clrComp {
+        margin-top: -6px;
+    }
+
+}

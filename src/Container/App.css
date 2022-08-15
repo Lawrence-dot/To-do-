@@ -1,0 +1,79 @@
+.hide {
+  display: none;
+}
+
+.background {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  padding-bottom: 99px;
+}
+
+.topBack {
+  height: 35vh;
+  width: 100vw;
+  padding-bottom: 99px;
+  z-index: -9;
+}
+
+.topColor {
+  height: 55vh;
+}
+
+#dark {
+  background-color: hsl(235, 21%, 11%);
+  transition: all .4s ease-in;
+}
+
+#light {
+  background-color: hsl(233, 11%, 84%);
+  transition: all .4s ease-in;
+}
+
+#darkImage {
+  background-repeat: no-repeat !important;
+  background-size: cover!important;
+  background-image: url('../Assets//bg-desktop-dark.jpg');
+  z-index: -9;
+  transition: all .4s ease-in;
+}
+
+#lightImage {
+  background-repeat: no-repeat !important;
+  background: url('../Assets/bg-desktop-light.jpg');
+  transition: all .4s ease-in;
+}
+
+@media (max-width : 579px) {
+  #lightImage {
+    background-size: cover!important;
+    background: url('../Assets/bg-mobile-light.jpg');
+  }
+
+  #darkImage {
+    background: url('../Assets/bg-mobile-dark.jpg');
+  }
+
+  .topBack {
+    height: 30vh;
+    padding-bottom: 99px;
+    z-index: -9;
+  }
+  
+  .topColor {
+    height: 45vh;
+  }
+}
+
+@media (max-width : 450px) {
+  .topBack {
+    height: 27vh;
+    padding-bottom: 99px;
+    z-index: -9;
+  }
+  
+  .topColor {
+    height: 73vh;
+  }
+}
