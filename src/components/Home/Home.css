@@ -11,7 +11,7 @@ p {
 
 .todoContainer {
     position: relative;
-    top: 80px;
+    top: 70px;
     margin: 0 auto;
     max-width: 500px;
     transition: all .5s ease;

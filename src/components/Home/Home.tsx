@@ -40,6 +40,7 @@ function Home() {
   };
 
   const addHandler = (e: React.KeyboardEvent | React.MouseEvent) => {
+    e.preventDefault();
     let checker: boolean = false;
     if ("key" in e && e.key === "Enter") {
       checker = true;
@@ -54,7 +55,7 @@ function Home() {
       inputRef.current?.value !== "" &&
       inputRef.current?.value !== null
     ) {
-      const newItem = {
+      let newItem = {
         content: inputRef.current?.value,
         status: "Pending",
         id: "kkkkkk",
@@ -81,10 +82,9 @@ function Home() {
   };
 
   const deleteHandler: EditList = (index) => {
-    let listCopy = [...list];
+    let listCopy: ListType[] = [...list];
     listCopy.splice(index, 1);
     setList(listCopy);
-    console.log(list, listCopy);
     setLists(listCopy);
   };
 
