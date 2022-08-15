@@ -7,13 +7,11 @@ export const ThemeContext = createContext<ThemecontextType | null>(null);
 
 type ThemecontextType = [
   theme: string | null,
-  setTheme: (newvalue: string)=>void
+  setTheme: (newvalue: string) => void
 ];
-
 
 function App() {
   const [theme, setTheme] = useState<string>("dark");
-  // const value: [context: string | null, setContext: (newvalue: string)=>void] = [theme, setTheme];
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       <div className="App">
