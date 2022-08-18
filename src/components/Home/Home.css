@@ -180,23 +180,26 @@ p {
     text-align: center;
 }
 
+/* .todoContainer {
+    max-width: 320px;
+    margin: 0 auto;
+} */
+
 @media (max-width: 575px) {
     .toBottom {
         max-height: 40px;
     }
 
     .todoContainer {
-        max-width: 365px;
+        max-width: 304px;
+        margin: 0 auto;
     }
 
     .filterList {
         margin-top: 5px;
         margin-left: -17px;
-        min-width: 365px;
-    }
+        min-width: 304px;
 
-    .todoContainer {
-        top: 12vh;
     }
 
     .itemsleft, .clrComp {

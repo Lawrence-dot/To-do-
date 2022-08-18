@@ -131,7 +131,7 @@ function Home() {
       });
 
   return (
-    <div className="Home" id={theme}>
+    <div className="Home justify-content-center" id={theme}>
       <div className="background">
         <div
           className="topBack"
@@ -140,7 +140,7 @@ function Home() {
         <div className="topColor" id={theme}></div>
       </div>
 
-      <div className="todoContainer justify-content-center mx-auto">
+      <div className="todoContainer justify-content-center">
         <div className="todoHeader d-flex flex-row text-white">
           <div className="todoHeading">
             <h4> TO DO </h4>
