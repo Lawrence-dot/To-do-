@@ -5,20 +5,24 @@ import lightIcon from "../../Assets/icon-sun.svg";
 import darkIcon from "../../Assets/icon-moon.svg";
 import { ThemeContext } from "../../Container/App";
 import Listitem from "./Listitem";
-import { Draggable } from "react-drag-reorder";
 import { ListType, EditList } from "../../Interfaces/ListType";
 
 function Home() {
+  const Sortable = require("sortablejs");
   const [theme, setTheme] = useContext(ThemeContext);
   const [filterList, setFilterlist] = useState<ListType[]>();
   const [filt, setFilt] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>();
-
   const [list, setList] = useState<ListType[]>([]);
+
   var length = filt === true ? filterList.length : list.length;
 
   useEffect(() => {
     fetchLists();
+    var el: HTMLElement = document.querySelector("#lists");
+    Sortable.Sortable.create(el, {
+      delayOnTouchOnly: true,
+    });
   }, []);
 
   const fetchLists = async () => {
@@ -181,9 +185,7 @@ function Home() {
           </form>
 
           <div className="todoLists mt-2 todoBody">
-            <ul id="item">
-              <Draggable>{lists}</Draggable>
-            </ul>
+            <ul id="lists"> {lists} </ul>
 
             <div className="toBottom d-flex row p-3">
               <div className="itemsleft col-6 col-sm-3 order-1 order-sm-1">
@@ -231,7 +233,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="bottom mt-5">
+        <div className="bottom mt-sm-5 mt-3">
           <p
             className={`${
               theme == "dark" ? "text-white" : "text-dark"

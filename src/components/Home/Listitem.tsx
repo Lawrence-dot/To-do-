@@ -1,10 +1,11 @@
 import React, { createContext, RefObject, useRef } from "react";
 import { Listitem } from "../../Interfaces/Props";
+import { SortableContainer } from "react-sortable-hoc";
 export const ListContext = createContext<refType>({} as refType);
 
 type refType = RefObject<HTMLInputElement>;
 
-function Card(props: Listitem) {
+function SortableItem(props: Listitem) {
   const inputRef = useRef<HTMLInputElement>();
   return (
     <ListContext.Provider value={inputRef}>
@@ -41,4 +42,4 @@ function Card(props: Listitem) {
   );
 }
 
-export default Card;
+export default SortableContainer(SortableItem);
