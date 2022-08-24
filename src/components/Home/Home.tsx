@@ -24,6 +24,7 @@ function Home() {
       delay: 1000,
       delayOnTouchOnly: true,
       disabled: false,
+      animation: 100
     });
     // Sortable.Sortable.create(el, {
     //   delay: 5000,
