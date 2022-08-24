@@ -20,9 +20,16 @@ function Home() {
   useEffect(() => {
     fetchLists();
     var el: HTMLElement = document.querySelector("#lists");
-    Sortable.Sortable.create(el, {
+    var sortable = new Sortable.Sortable(el, {
+      delay: 5000,
       delayOnTouchOnly: true,
+      disabled: false,
     });
+    // Sortable.Sortable.create(el, {
+    //   delay: 5000,
+    //   delayOnTouchOnly: true,
+    //   disabled: true,
+    // });
   }, []);
 
   const fetchLists = async () => {
@@ -233,7 +240,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="bottom mt-sm-5 mt-3">
+        <div className="bottom mt-5 mt-md-3">
           <p
             className={`${
               theme == "dark" ? "text-white" : "text-dark"
