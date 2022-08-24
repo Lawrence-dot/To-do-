@@ -5,7 +5,7 @@ import lightIcon from "../../Assets/icon-sun.svg";
 import darkIcon from "../../Assets/icon-moon.svg";
 import { ThemeContext } from "../../Container/App";
 import Listitem from "./Listitem";
-import Sortable from "sortablejs";
+import { Draggable } from "react-drag-reorder";
 import { ListType, EditList } from "../../Interfaces/ListType";
 
 function Home() {
@@ -19,11 +19,6 @@ function Home() {
 
   useEffect(() => {
     fetchLists();
-    var sortable;
-    var el = document.getElementById("item");
-    sortable = Sortable.create(el, {
-      animation: 150,
-    });
   }, []);
 
   const fetchLists = async () => {
@@ -186,7 +181,9 @@ function Home() {
           </form>
 
           <div className="todoLists mt-2 todoBody">
-            <ul id="item">{lists}</ul>
+            <ul id="item">
+              <Draggable>{lists}</Draggable>
+            </ul>
 
             <div className="toBottom d-flex row p-3">
               <div className="itemsleft col-6 col-sm-3 order-1 order-sm-1">
@@ -234,7 +231,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="bottom mt-5 mt-sm-3">
+        <div className="bottom mt-5">
           <p
             className={`${
               theme == "dark" ? "text-white" : "text-dark"

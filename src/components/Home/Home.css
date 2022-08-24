@@ -66,6 +66,7 @@ p {
     border-radius: 0px 5px  5px 0px;
     font-size: 23px;
     width: 35px;
+    padding: 0px;
 }
 
 #light .addBtn {
@@ -186,19 +187,22 @@ p {
 } */
 
 @media (max-width: 575px) {
+    p {
+        font-size: 100%!important;
+    }
     .toBottom {
         max-height: 40px;
     }
 
     .todoContainer {
-        max-width: 304px;
+        max-width: 306px;
         margin: 0 auto;
     }
 
     .filterList {
         margin-top: 5px;
         margin-left: -17px;
-        min-width: 304px;
+        min-width: 306px;
 
     }
 
