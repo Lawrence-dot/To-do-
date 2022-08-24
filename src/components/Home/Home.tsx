@@ -197,7 +197,7 @@ function Home() {
 
             <div className="toBottom d-flex row p-3">
               <div className="itemsleft col-6 col-sm-3 order-1 order-sm-1">
-                <p>{length} Items Left</p>
+                <p>{length} {length > 1 ? "items" : "item"} Left</p>
               </div>
 
               <div className="d-flex mt-2 mt-sm-0 filterList justify-content-center col-12 order-3 order-sm-2 col-sm-5 flex-row todoBody">
