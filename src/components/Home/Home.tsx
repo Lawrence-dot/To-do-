@@ -43,7 +43,14 @@ function Home() {
   };
 
   const toggleTheme = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+    if (theme === "dark") {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    } else {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    }
+    // theme === "dark" ? setTheme("light") : setTheme("dark");
   };
 
   const addHandler = (e: React.KeyboardEvent | React.MouseEvent) => {
@@ -244,7 +251,7 @@ function Home() {
         <div className="bottom mt-5 mt-md-3">
           <p
             className={`${
-              theme == "dark" ? "text-white" : "text-dark"
+              theme === "dark" ? "text-white" : "text-dark"
             } text-center`}
           >
             Drag and drop to reorder list
