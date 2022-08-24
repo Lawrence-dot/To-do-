@@ -21,7 +21,7 @@ function Home() {
     fetchLists();
     var el: HTMLElement = document.querySelector("#lists");
     var sortable = new Sortable.Sortable(el, {
-      delay: 1000,
+      delay: 500,
       delayOnTouchOnly: true,
       disabled: false,
       animation: 100
