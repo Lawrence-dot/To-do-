@@ -20,7 +20,7 @@ function Home() {
   useEffect(() => {
     fetchLists();
     var el: HTMLElement = document.querySelector("#lists");
-    var sortable = new Sortable.Sortable(el, {
+    new Sortable.Sortable(el, {
       delay: 300,
       delayOnTouchOnly: true,
       disabled: false,
